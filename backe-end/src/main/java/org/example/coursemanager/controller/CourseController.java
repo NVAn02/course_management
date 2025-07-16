@@ -86,4 +86,9 @@ public class CourseController {
         return courseService.getCourse(id);
     }
 
+    @GetMapping("/get-course-infor/{id}")
+    public ResponseEntity<Object> getCourseInfor(@PathVariable Long id) {
+        return courseService.getCourse(id);
+    }
+
 }
