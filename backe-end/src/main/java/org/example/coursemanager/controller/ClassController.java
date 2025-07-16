@@ -75,5 +75,11 @@ public class ClassController {
         return classService.changeStatus(id);
     }
 
+    @GetMapping("/get-infor/{id}")
+    public ResponseEntity<Object> getClassInfor(@PathVariable Long id){
+        return classService.getClass(id);
+
+    }
+
 
 }
