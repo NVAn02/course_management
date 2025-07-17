@@ -77,6 +77,7 @@ public class ClassController {
 
     @GetMapping("/get-infor/{id}")
     public ResponseEntity<Object> getClassInfor(@PathVariable Long id){
+        // update api get class infor
         return classService.getClass(id);
 
     }
