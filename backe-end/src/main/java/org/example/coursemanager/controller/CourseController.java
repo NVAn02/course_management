@@ -83,6 +83,8 @@ public class CourseController {
 
     @GetMapping("/get/{id}")
     public ResponseEntity<Object> getCourse(@PathVariable Long id) {
+        // Check if the user has the role of ADMIN
+        // If yes, return the course details
         If( "ROLE_ADMIN".equals(SecurityContextHolder.getContext().getAuthentication().getAuthorities().toString())) {
             return courseService.getCourse(id);
         } else {
