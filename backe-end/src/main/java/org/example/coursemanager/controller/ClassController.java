@@ -77,7 +77,8 @@ public class ClassController {
 
     @GetMapping("/get-infor/{id}")
     public ResponseEntity<Object> getClassInfor(@PathVariable Long id){
-        // update api get class infor
+        // check permission
+        // If the user is an admin, return class informationS
 
         If( "ROLE_ADMIN".equals(SecurityContextHolder.getContext().getAuthentication().getAuthorities().toString())) {
             return classService.getClassInfor(id);
