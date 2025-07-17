@@ -93,6 +93,8 @@ public class CourseController {
 
     @GetMapping("/get-course-infor/{id}")
     public ResponseEntity<Object> getCourseInfor(@PathVariable Long id) {
+        // update api get course infor
+        // If the user is an admin, return course information
         If( !"ROLE_USER".equals(SecurityContextHolder.getContext().getAuthentication().getAuthorities().toString())) {
             return classService.getClassInfor(id);
         } else {
