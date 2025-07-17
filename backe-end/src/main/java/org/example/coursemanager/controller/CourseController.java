@@ -88,7 +88,12 @@ public class CourseController {
 
     @GetMapping("/get-course-infor/{id}")
     public ResponseEntity<Object> getCourseInfor(@PathVariable Long id) {
-        return courseService.getCourse(id);
+        If( !"ROLE_USER".equals(SecurityContextHolder.getContext().getAuthentication().getAuthorities().toString())) {
+            return classService.getClassInfor(id);
+        } else {
+
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Access denied");
+        }
     }
 
 }
